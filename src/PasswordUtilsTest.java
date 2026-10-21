@@ -43,4 +43,16 @@ public class PasswordUtilsTest {
         boolean actual = PasswordUtils.containsTriple(password);
         assertEquals(false,actual);
     }
+
+    @Test void testCountSpecialCharactersThree(){
+        String password = "p@ssword!?";
+        int actual = PasswordUtils.countSpecialCharacters(password);
+        assertEquals(3,actual);
+    }
+
+    @Test void testCountSpecialCharactersZero(){
+        String password = "password1";
+        int actual = PasswordUtils.countSpecialCharacters(password);
+        assertEquals(0,actual);
+    }
 }
